@@ -7,7 +7,6 @@ def pairSum(arr,n,target_sum):
     frequency = {}
     for num in arr:
         frequency[num] = frequency.get(num, 0) + 1
-    print(frequency)
     # Iterate through the array and check if complement exists in the dictionary
     for num in arr:
         complement = target_sum - num
