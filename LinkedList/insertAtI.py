@@ -33,24 +33,30 @@ def printll(head):
           print(head.data," ->",end=' ')
           head=head.next
     print("None")
-def insertAtIRecursively(head,i,data):
-    if i<0:
-         return head
-    if i==0:
-         new_node=Node(data)
-         new_node.next=head
-         return new_node
-    if head==None:
-         return None
+def insertAtI(head,i,data):
+    if i<0 or i>length(head):
+        return head
     
-    smallhead=insertAtIRecursively(head.next, i-1, data)
-    head.next=smallhead
-    return head
+    curr=head
+    prev=None
+    count=0
+    while count<i:
+        prev=curr
+        curr=curr.next
+        count+=1
+    new_node=Node(data)
+    if prev is not None:
+        prev.next=new_node
+    else:
+        head=new_node
+    new_node.next=curr
+    
+    return(head)
 
     
 head=takeInput()
 printll(head)
-head=insertAtIRecursively(head,1,3)
+head=insertAtI(head,1,3)
 printll(head)
-head=insertAtIRecursively(head,0,7)
+head=insertAtI(head,0,7)
 printll(head)
