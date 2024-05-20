@@ -36,14 +36,23 @@ def printll(head):
           head=head.next
     print("None")
 def reverseLL(head):
+    # if head is None or head.next is None:
+    #     return head,head
+    # smallhead,smalltail=reverseLL(head.next)
+    # smalltail.next=head
+    # head.next=None
+    # return smallhead,head
+
+    #another approach
     if head is None or head.next is None:
-        return head,head
-    smallhead,smalltail=reverseLL(head.next)
-    smalltail.next=head
+        return head
+    smallhead=reverseLL(head.next)
+    tail=head.next
+    tail.next=head
     head.next=None
-    return smallhead,head
+    return smallhead
     
 head=takeInput()
 printll(head)
-head,tail=reverseLL(head)
+head=reverseLL(head)
 printll(head)
