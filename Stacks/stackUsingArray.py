@@ -13,7 +13,7 @@ class Stack:
             print("Empty Stack")
         return self.__data[self.size()-1]
     def size(self):
-        return len(self.__data)
+        return len(self.__data)   
     def isEmpty(self):
         return self.size()==0
 
