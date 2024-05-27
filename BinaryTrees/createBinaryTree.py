@@ -15,10 +15,16 @@ def printTree(root):
     printTree(root.left)
     printTree(root.right)
 
+def treeInput():
+    rootInput=int(input())
+    if rootInput == -1:
+        return
+    rootnode=BinaryTree(rootInput)
+    leftnode=treeInput()
+    rightnode=treeInput()
+    rootnode.left=leftnode
+    rootnode.right=rightnode
+    return rootnode
 
-btn1=BinaryTree(1)
-btn2=BinaryTree(2)
-btn3=BinaryTree(3)
-btn1.left=btn2
-btn1.right=btn3
-printTree(btn1)
+root=treeInput()
+printTree(root)
