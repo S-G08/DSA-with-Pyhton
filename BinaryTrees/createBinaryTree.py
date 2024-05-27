@@ -26,5 +26,13 @@ def treeInput():
     rootnode.right=rightnode
     return rootnode
 
+def numNodes(root):
+    if root == None:
+        return 0
+    leftcount=numNodes(root.left)
+    rightcount=numNodes(root.right)
+    return 1 + leftcount + rightcount
+
 root=treeInput()
 printTree(root)
+print(numNodes(root))
