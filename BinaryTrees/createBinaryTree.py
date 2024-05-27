@@ -3,6 +3,7 @@ class BinaryTree:
         self.data=data
         self.left=None
         self.right=None
+  
 def printTree(root):
     if root == None:
         return
