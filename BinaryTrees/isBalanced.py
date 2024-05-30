@@ -29,19 +29,41 @@ def height(root):
         return 0 
     return (1+max(height(root.left),height(root.right)))
 
-def isBalanced(root):
-    if root == None:
-        return True
-    lh=height(root.left)
-    rh=height(root.right)
+def getHeightAndCheckBalanced(root):
+    if root==None:
+        return 0, True
+    lh, isLeftBalanced=getHeightAndCheckBalanced(root.left)
+    rh, isRightBalanced=getHeightAndCheckBalanced(root.right)
+    h=1+max(lh,rh)
     if (lh-rh>1 or rh-lh>1):
-        return False
-    leftbalanced=isBalanced(root.left)
-    rightbalanced=isBalanced(root.right)
-    if leftbalanced and rightbalanced:
+        return h, False
+    if isLeftBalanced and isRightBalanced:
+        return h, True
+    else:
+        return h, False
+def isBalanced(root):
+
+    #Approcah 1
+    # if root == None:
+    #     return True
+    # lh=height(root.left)
+    # rh=height(root.right)
+    # if (lh-rh>1 or rh-lh>1):
+    #     return False
+    # leftbalanced=isBalanced(root.left)
+    # rightbalanced=isBalanced(root.right)
+    # if leftbalanced and rightbalanced:
+    #     return True
+    # else:
+    #     return False
+    
+    #Approach 2
+    h1, checkBalanced = getHeightAndCheckBalanced(root)
+    if checkBalanced:
         return True
     else:
         return False
+    
 
 root=treeInput()
 print(isBalanced(root))
