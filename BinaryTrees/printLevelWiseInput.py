@@ -29,26 +29,45 @@ def takeLevelWiseInput():
             q.put(rightnode)
     return root
 def printLevelWise(root):
+    #1st Way
+    # q=queue.Queue()
+    # q.put(root)
+    # while (not(q.empty())):
+    #     current=q.get()
+    #     print(current.data,end=':')
+    #     if(current.left ==None):
+    #         print("L:-1",end=',')
+    #     else:
+    #         print("L:",end='')
+    #         print(current.left.data,end=',')
+    #     if(current.right==None):
+    #         print("R:-1",end="")       
+    #     else:
+    #         print("R:",end='')
+    #         print(current.right.data,end="")
+    #     print()
+    #     if(current.left !=None):
+    #         q.put(current.left)
+    #     if(current.right!= None):
+    #         q.put(current.right)
+    #2nd Way
+    if(root==None):
+        print(-1)
     q=queue.Queue()
     q.put(root)
-    while (not(q.empty())):
-        current=q.get()
-        print(current.data,end=':')
-        if(current.left ==None):
-            print("L:-1",end=',')
-        else:
-            print("L:",end='')
-            print(current.left.data,end=',')
-        if(current.right==None):
-            print("R:-1",end="")       
-        else:
-            print("R:",end='')
-            print(current.right.data,end="")
+    while(not(q.empty())):
+        count=q.qsize()
+        while count>0:
+            curr=q.get()
+            print(curr.data,end=" ")
+            if curr.left!=None:
+                q.put(curr.left)
+            if curr.right!=None:
+                q.put(curr.right)
+            count-=1
         print()
-        if(current.left !=None):
-            q.put(current.left)
-        if(current.right!= None):
-            q.put(current.right)
+
+
             
 
 root=takeLevelWiseInput()
