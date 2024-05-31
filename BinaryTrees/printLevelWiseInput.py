@@ -49,6 +49,7 @@ def printLevelWise(root):
             q.put(current.left)
         if(current.right!= None):
             q.put(current.right)
+            
 
 root=takeLevelWiseInput()
 printLevelWise(root)
