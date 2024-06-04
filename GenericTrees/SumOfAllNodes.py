@@ -30,28 +30,12 @@ def takeTreeInput():
         child=takeTreeInput()
         root.children.append(child)
     return root
-def numNodes(root):
+def sumOfAllNodes(root) :
     if root==None:
         return 0
-    count=1
+    sum=root.data
     for child in root.children:
-        count+=numNodes(child)
-    return count
-# n1=TreeNode(1)
-# n2=TreeNode(2)
-# n3=TreeNode(3)
-# n4=TreeNode(4)
-# n5=TreeNode(5)
-# n6=TreeNode(6)
-# n7=TreeNode(7)
-
-# n1.children.append(n2)
-# n1.children.append(n3)
-# n1.children.append(n4)
-# n1.children.append(n5)
-
-# n3.children.append(n6)
-# n3.children.append(n7)
-n1=takeTreeInput()
-printTree(n1)
-print(numNodes(n1))
+        sum+=sumOfAllNodes(child)
+    return sum
+root=takeTreeInput()
+print(sumOfAllNodes(root))
