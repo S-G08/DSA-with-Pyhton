@@ -11,4 +11,4 @@ def pairSum(arr,target):
     return ans
 
 ar=[int(x) for x in input().split()]
-print(pairSum(ar,4))
+print(pairSum(ar,0))
