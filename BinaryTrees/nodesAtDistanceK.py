@@ -50,7 +50,7 @@ def nodesAtDistanceKHelper(root, target, k) :
         return 1 + leftD
 
 
-    rightD = nodesAtDistanceKHelper(root.right, target, k);
+    rightD = nodesAtDistanceKHelper(root.right, target, k)
     if rightD != -1 :
         if (rightD + 1) == k :
             print(root.data)
