@@ -2,7 +2,6 @@ from os import *
 from sys import *
 from collections import *
 from math import *
-
 ans=[]
 def is_valid(row,col,arr,visited,n):
     if row<0 or row>= n or col<0 or col>= n or arr[row][col] == 0 or visited[row][col]:
