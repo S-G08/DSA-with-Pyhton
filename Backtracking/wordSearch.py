@@ -1,9 +1,3 @@
-'''
-    Time Complexity: O(N*M*4^L)
-    Space Complexity: O(1)
-
-    where 'N' and 'M' are the dimensions of the board and 'L' is the length of the word to be searched.
-'''
 
 from typing import List
 
