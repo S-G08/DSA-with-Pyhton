@@ -5,7 +5,6 @@ def calcSubset(A, res, subset, index):
         calcSubset(A, res, subset, i + 1)
         subset.pop()
 
-
 def subsets(A):
     subset = []
     res = []
