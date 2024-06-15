@@ -1,5 +1,4 @@
 ans=[]
-
 def isSafe(row,col,configuration,n):
     for i in range(n):
         for j in range(n):
