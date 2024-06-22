@@ -37,8 +37,8 @@ def topologicalSort(g):
     
     
 if __name__ == "__main__":
-    n = int(input())
-    e = int(input())
+    n = int(input()) #number of nodes
+    e = int(input()) #number of edges
 
     g = Graph(n)
     for _ in range(e):
